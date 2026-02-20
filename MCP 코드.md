@@ -9,24 +9,18 @@
 ```python
 from mcp.server.fastmcp import FastMCP
 
-#MCP 서버 생성하기
 
-mcp = FastMCP(name=“tutorial_1”) 1
+mcp = FastMCP(name="tutorial_1")
 
 @mcp.tool()
-
 def echo(message: str) -> str:
+    '''
+    입력받은 메시지를 그대로 반환화는 도구입니다.
+    '''
+    return message + " 라는 메시지가 입력되었습니다. Hello World!!"
 
-# 입력받은 메시지를 그대로 반환하는 도구
-
-  return message + “ 라는 메시지가 입력되었습니다. 프로그램의 시작은 언제나 Hello World!”
-
-# 서버 실행하기
-
-if __name__ == “__main__”:
-
-mcp.run()
-
+if __name__ == "__main__":
+    mcp.run()
 ```
 
 
@@ -34,24 +28,16 @@ mcp.run()
 	- claude_desktop_config.json 파일 작성, 위치는 C:\Users\user\AppData\Roaming\Claude 폴더에 위치
 ```
 {
-
-“mcpServers”: {
-
-     “tutorial_1”: {
-
-          “command”: “python”,
-
-          “args”: [
-
-                   “c:\\MCP_lab\\tutorial_1.py”
-
-            ]
-
-        }
-
+  "mcpServers": {
+    "tutorial_1": {
+      "command": "python",
+      "args": [
+        "C:\\test\\tutorial_1.py"
+      ]
     }
-
+  }
 }
+
 ```
 
 ### 9-2 MCP.resource 실습(tutorial_2.py)
@@ -59,52 +45,44 @@ mcp.run()
 ```
 from mcp.server.fastmcp import FastMCP
 
-#MCP 서버 생성하기
 
-mcp = FastMCP(name=“tutorial_2”)
+mcp = FastMCP(name="tutorial_2")
 
 @mcp.tool()
-
 def add(a: int, b: int) -> int:
+    '''
+    두 숫자를 더하는 함수 
+    '''
+    return a + b
 
-``` 두 숫자를 더하는 함수 ```
 
-  return a + b
-
-@mcp.resource(“greeting://hello”)
-
+@mcp.resource("greeting://hello")
 def get_greeting() -> str:
+    """ 인사말을 제공하는 함수 """    
+    return f"Hello, World!"
 
-```인사말을 제공하는 함수```
-
-  return f“Hello, world!”
-
-# 서버 실행하기
-
-if __name__ == “__main__”:
-
-mcp.run()
+if __name__ == "__main__":
+    mcp.run()
 ```
 
 ### 설정파일
 
 ```
 {
-
-  “mcpServers”: {
-    “tutorial_1”: {
-        “command”: “python”,
-        “args”: [
-          “c:\\MCP_lab\\tutorial_1.py”
-        ]
+  "mcpServers": {
+    "tutorial_1": {
+      "command": "python",
+      "args": [
+        "C:\\test\\tutorial_1.py"
+      ]
     },
-   “tutorial_2”: {
-       “command”: “python”,
-       “args”: [
-         “c:\\MCP_lab\\tutorial_2.py”
-       ]
+      "tutorial_2": {
+      "command": "python",
+      "args": [
+        "C:\\test\\tutorial_2.py"
+      ]
     }
-   }
+  }
 }
 ```
 
@@ -113,61 +91,51 @@ mcp.run()
 ```
 from mcp.server.fastmcp import FastMCP
 
-#MCP 서버 생성하기
 
-mcp = FastMCP(name=“tutorial_3”)
-
-# Prompt 확장 예제
+mcp = FastMCP("tutorial_3")
 
 @mcp.prompt()
+def prompt_extenstion(contents: str) -> str:
+    '''
+    프롬프트에서 사실과 의견을 구분합니다. 
+    '''
+    return f"""{contents}
 
-def prompt_extension(contents: str) -> str:
+    이 프롬프트에 대해 아래와 같은 템플랫에 맞춰 답변해 줘.
 
-# 프롬프트에서 사실과 의견을 구분합니다. 
+    * 사실:
 
-  return f"""{contents}
-
-이 프롬프트에 대해 아래와 같은 템플릿 서식에 맞도록 답변해줘.
-
-* 사실:
-
-* 의견:
-
-"""
-
-
-# 서버 실행하기
-
-if __name__ == “__main__”:
-
-mcp.run()
+    * 의견:
+    """
+# 서버 실행하기 
+if __name__ == "__main__":
+    mcp.run()
 ```
 
 ### 설정파일
 
 ```
 {
-
-  “mcpServers”: {
-      “tutorial_1”: {
-          “command”: “python”,
-          “args”: [
-             “c:\\MCP_lab\\tutorial_1.py”
-          ]
-      },
-      “tutorial_2”: {
-          “command”: “python”,
-          “args”: [
-             “c:\\MCP_lab\\tutorial_2.py”
-          ]
-      },
-      “tutorial_3”: {
-          “command”: “python”,
-          “args”: [
-             “c:\\MCP_lab\\tutorial_3.py”
-          ]
-       }
-   }
+  "mcpServers": {
+    "tutorial_1": {
+      "command": "python",
+      "args": [
+        "C:\\test\\tutorial_1.py"
+      ]
+    },
+      "tutorial_2": {
+      "command": "python",
+      "args": [
+        "C:\\test\\tutorial_2.py"
+      ]
+    },
+      "tutorial_3": {
+      "command": "python",
+      "args": [
+        "C:\\test\\tutorial_3.py"
+      ]
+    }    
+  }
 }
 ```
 
@@ -183,11 +151,11 @@ import os
 
 # 현재 폴더에 temp 폴더 생성
 
-os.makedirs(“c:/test/temp”, exist_ok=True)
+os.makedirs("c:/test/temp", exist_ok=True)
 
 # 현재 폴더에 temp 폴더 삭제
 
-# os.rmdir(“c:/test/temp”)
+# os.rmdir("c:/test/temp")
 ```
 
 다음 코드를 작성하고 server.py 으로 저장
