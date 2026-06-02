@@ -1,0 +1,201 @@
+{
+  // ============================================
+  // 에디터 관련 설정
+  // ============================================
+  "editor.fontSize": 16,
+  "editor.fontVariations": false,
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.inlineSuggest.enabled": true,
+  "editor.parameterHints.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.quickSuggestionsDelay": 10,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.suggest.localityBonus": true,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "on",
+
+  // ============================================
+  // 터미널 설정 (Windows 최적화)
+  // ============================================
+  "terminal.integrated.fontSize": 20,
+  "terminal.integrated.inheritEnv": true,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "icon": "terminal-bash"
+    }
+  },
+  "terminal.integrated.env.windows": {},
+  // uv 인식 안 될 때만 아래 주석 해제
+  // "terminal.integrated.env.windows": {
+  //   "PATH": "${env:PATH};${env:USERPROFILE}\\.cargo\\bin"
+  // },
+  "terminal.integrated.enablePersistentSessions": true,
+  "terminal.integrated.smoothScrolling": true,
+
+  // ============================================
+  // Git 설정
+  // ============================================
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+
+  // ============================================
+  // 마크다운 설정
+  // ============================================
+  "markdown.preview.fontSize": 20,
+  "markdown.styles": [
+    "https://use.fontawesome.com/releases/v5.7.1/css/all.css",
+    "markdown-style.css"
+  ],
+
+  // ============================================
+  // 소스 코드 관리 설정
+  // ============================================
+  "scm.inputFontSize": 20,
+
+  // ============================================
+  // 워크벤치 설정
+  // ============================================
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "vs-seti",
+
+  // ============================================
+  // 보안 설정
+  // ============================================
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // ============================================
+  // 탐색기 설정
+  // ============================================
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+
+  // ============================================
+  // 파일 설정 (Windows 최적화)
+  // ============================================
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.eol": "\n",
+  // Windows 팀 협업이면 아래 주석 해제 권장
+  // "files.eol": "\r\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.encoding": "utf8",
+
+  // ============================================
+  // 브레드크럼 설정
+  // ============================================
+  "breadcrumbs.enabled": false,
+
+  // ============================================
+  // Python 설정 (Windows 최적화)
+  // ============================================
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+
+  // ============================================
+  // Jupyter 설정
+  // ============================================
+  "jupyter.themeMatplotlibPlots": true,
+  "jupyter.askForKernelRestart": false,
+  "jupyter.widgetScriptSources": [
+    "https://cdn.jsdelivr.net",
+    "https://unpkg.com"
+  ],
+
+  // ============================================
+  // 노트북 설정
+  // ============================================
+  "notebook.output.wordWrap": true,
+  "notebook.formatOnSave.enabled": true,
+  "notebook.output.scrolling": true,
+  "notebook.lineNumbers": "on",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+
+  // ============================================
+  // CSS 설정
+  // ============================================
+  "css.lint.emptyRules": "ignore",
+
+  // ============================================
+  // 성능 최적화 (Windows)
+  // ============================================
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/node_modules/**": true,
+    "**/__pycache__/**": true,
+    "**/.venv/**": true,
+    "**/venv/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.ruff_cache/**": true,
+    "**/htmlcov/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/__pycache__": true,
+    "**/.venv": true,
+    "**/venv": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/htmlcov": true,
+    "**/*.egg-info": true
+  },
+
+  // ============================================
+  // 언어별 설정
+  // ============================================
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.parameterHints.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.rulers": [88]
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+
+  // ============================================
+  // 기타 유용한 설정
+  // ============================================
+  "extensions.autoUpdate": true,
+  "update.mode": "start",
+  "telemetry.telemetryLevel": "off"
+}
