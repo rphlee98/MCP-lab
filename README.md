@@ -4,12 +4,11 @@
 
 #### 예제 파일 리스트
 
-1. MCP 실습(오전)
-2. MCP 실습(오후)
-3. 어지러운 바탕화면 실습 예제
-4. 아래한글 실습파일(server_hwp.py, gen.py)
-5. VS Code 환경설정
-6. VS Code 사용자설정 json파일
-7. 환경구축.md
+1. MCP 실습자료.md
+2. 어지러운 바탕화면 실습 예제
+3. 아래한글 실습파일(server_hwp.py, gen.py)
+4. VS Code 환경설정.md
+5. VS Code 사용자설정 json파일
+6. 환경구축.md
  
 #### 감사합니다.
