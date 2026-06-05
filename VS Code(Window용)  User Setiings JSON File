@@ -2,7 +2,7 @@
   // ============================================
   // 에디터 관련 설정
   // ============================================
-  "editor.fontSize": 16,
+  "editor.fontSize": 13,
   "editor.fontVariations": false,
   "editor.defaultFormatter": "ms-python.black-formatter",
   "editor.autoClosingBrackets": "never",
@@ -24,7 +24,7 @@
   // ============================================
   // 터미널 설정 (Windows 최적화)
   // ============================================
-  "terminal.integrated.fontSize": 20,
+  "terminal.integrated.fontSize": 13,
   "terminal.integrated.inheritEnv": true,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.profiles.windows": {
