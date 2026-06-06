@@ -21,7 +21,7 @@ def read_hwp(file_name: str) -> str:
     import olefile
 
     # 상대 경로인 경우 현재 디렉토리 기준으로 절대 경로 변환
-    file_path = os.path.join("c:/test", file_name)
+    file_path = os.path.join("c:/project/my_mcp", file_name)
 
     try:
         # 한글 파일 열기
@@ -89,7 +89,7 @@ def write_md_to_hwpx(md_content: str, output_filename: str) -> str:
         create_section_xml(temp_dir, soup)
 
         # 압축 → HWPX 저장
-        output_path = os.path.join("c:/test", output_filename)
+        output_path = os.path.join("c:/project/my_mcp", output_filename)
         with zipfile.ZipFile(output_path, "w") as zip_file:
             zip_file.write(
                 os.path.join(temp_dir, "mimetype"),
