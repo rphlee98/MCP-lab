@@ -1,4 +1,4 @@
-### 프로젝트 구조
+### 프로젝트 구조: 가상환경을 생성하고 초기화하면 자동 생성 
 ```
 C:\project\my_mcp
  ├── server.py
@@ -21,6 +21,7 @@ uv init my_mcp
 ### FastMCP 설치하기
 ```
 cd my_mcp
+uv add "mcp[cli]"
 uv add fastmcp
 ```
 
